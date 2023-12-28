@@ -1,0 +1,77 @@
+$transitionBackground: 500ms;
+
+.popup {
+  width: 100%;
+  height: 100%;
+  
+  pointer-events: none;
+  padding-top: 6.25rem;
+
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+
+  &__title,
+  &__close {
+    transition: opacity 0;
+    opacity: 0;
+  }
+
+  &__container {
+    height: 100%;
+
+    position: relative;
+
+    &::before {
+      content: "";
+      width: 0%;
+      height: 0%;
+  
+      border-radius: 50%;
+      background-color: $c-base;
+      transform: translate(30%, -35%);
+  
+      transition: all $transitionBackground;
+  
+      position: absolute;
+      right: 6.5rem;
+      top: 3rem;
+      z-index: -1;
+    }
+  }
+
+  &._active {
+    pointer-events: initial;
+  }
+
+  &._active & {
+    &__title,
+    &__close {
+      transition: opacity 300ms linear $transitionBackground;
+      opacity: 1;
+    }
+
+    &__container {
+      &::before {
+        width: 210%;
+        height: 210%;
+      }
+    }
+  }
+
+  &__title {
+    color: $c-dark;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 7.125rem;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.17813rem;
+    text-transform: uppercase;
+  }
+
+  &__close {
+    padding: 0.625rem;
+    background-color: $c-dark;
+  }
+}

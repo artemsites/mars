@@ -1,0 +1,20 @@
+.btn {
+  display: flex;
+  padding: 0.625rem 0.9375rem;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 0.25rem;
+  background: $c-base;
+
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+
+  transition: background-color 300ms, color 300ms;
+
+  &:hover {
+    background-color: $c-red;
+    color: $c-base;
+  }
+}

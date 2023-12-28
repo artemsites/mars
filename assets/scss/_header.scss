@@ -1,0 +1,13 @@
+.header {
+  display: flex;
+  align-items: center;
+
+  transform: translateX(-50%);
+  position: absolute;
+  left: 50%;
+  top: 1.87rem;
+
+  &__btn {
+    margin-left: 2.5rem;
+  }
+}

@@ -1,0 +1,18 @@
+.nav {
+  display: inline-flex;
+
+  gap: 1.88rem;
+
+  margin-left: auto;
+  
+  &__item {
+    color: $c-base;
+    text-transform: uppercase;
+
+    transition: color 300ms;
+
+    &:hover {
+      color: $c-red;
+    }
+  }
+}

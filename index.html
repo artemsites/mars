@@ -1,69 +1,101 @@
 <!doctype html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Точка назначения: МАРС</title>
 
-    <link rel="stylesheet" href="/assets/scss/main.scss">
-  </head>
-  <body>
-    
+<head>
+  <meta charset="UTF-8" />
+  <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Точка назначения: МАРС</title>
 
-    <header class="header container">
-      <img src="/assets/images/logo.svg" alt="Логотип МАРС" class="logo">
-      
-      <nav class="nav">
-        <a href="#" class="nav__item">О марсе</a>
-        <a href="#" class="nav__item">Процесс</a>
-        <a href="#" class="nav__item">Билеты</a>
-        <a href="#" class="nav__item">Новости</a>
-        <a href="#" class="nav__item">Контакты</a>
-      </nav>
+  <link rel="stylesheet" href="/assets/scss/main.scss">
+</head>
 
-      <button class="header__btn btn" id="js-get-popup" aria-label="Кнопка вызова покупки билетов">Купить билеты</button>
-    </header>
+<body>
 
-    <main>
 
-      <section class="banner">
-        <div class="banner__content container">
+  <header class="header container">
+    <img src="/assets/images/logo.svg" alt="Логотип МАРС" class="logo">
 
-          <div class="banner__decor-line"></div>
+    <nav class="nav">
+      <a href="#" class="nav__item">О марсе</a>
+      <a href="#" class="nav__item">Процесс</a>
+      <a href="#" class="nav__item">Билеты</a>
+      <a href="#" class="nav__item">Новости</a>
+      <a href="#" class="nav__item">Контакты</a>
+    </nav>
 
-          <div class="banner__box">
-            <div class="banner__suptitle">Точка назначения:</div>
-            <div class="banner__title">
-              <div class="banner__title-self">MAPC</div>
-              <video class="banner__title-video" src="/assets/videos/mars.m4v" muted preload="auto" loop autoplay></video>
-            </div>
+    <button class="header__btn btn" id="js-get-popup" aria-label="Кнопка вызова покупки билетов">Купить билеты</button>
+  </header>
+
+  <main>
+
+    <section class="banner">
+      <div class="banner__content container">
+
+        <div class="banner__decor-line"></div>
+
+        <div class="banner__box">
+          <div class="banner__suptitle">Точка назначения:</div>
+          <div class="banner__title">
+            <div class="banner__title-self">МАРС</div>
+            <video class="banner__title-video" src="/assets/videos/mars.m4v" muted preload="auto" loop autoplay></video>
           </div>
-
-        </div>
-      </section>
-
-    </main>
-
-
-
-    <div class="popup" id="js-popup">
-      <div class="popup__container container">
-        <div class="popup__box">
-          <h2 class="popup__title">Бронирование<br>билетов</h2>
-          <button class="popup__close" id="js-close-popup">
-            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
-              <path d="M0 1.71429L1.71429 4.08718e-07L12 10.2857L10.2857 12L0 1.71429Z" fill="#D9D9D9"/>
-              <path d="M1.71429 12L0 10.2857L10.2857 0L12 1.71429L1.71429 12Z" fill="#D9D9D9"/>
-            </svg>
-          </button>
         </div>
 
       </div>
+    </section>
+
+  </main>
+
+
+
+  <div class="popup" id="js-popup">
+    <div class="popup__container container">
+      <div class="popup__box">
+        <h2 class="popup__title">Бронирование<br>билетов</h2>
+        <button class="popup__close" id="js-close-popup">
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+            <path d="M0 1.71429L1.71429 4.08718e-07L12 10.2857L10.2857 12L0 1.71429Z" fill="#D9D9D9" />
+            <path d="M1.71429 12L0 10.2857L10.2857 0L12 1.71429L1.71429 12Z" fill="#D9D9D9" />
+          </svg>
+        </button>
+      </div>
+
+      <form class="form popup__form">
+        <div class="form__box">
+          <div class="form__item-box">
+            <label class="form__item js-get-calendar">
+              <span class="form__item-title">Дата заезда</span>
+              <input class="form__item-input" type="text" value="">
+            </label>
+            <div class="form__item-calendar js-calendar"></div>
+          </div>
+
+          <div class="form__item-box">
+            <label class="form__item js-get-calendar">
+              <span class="form__item-title">Дата выезда</span>
+              <input class="form__item-input" type="text" value="">
+            </label>
+            <div class="form__item-calendar js-calendar"></div>
+          </div>
+
+          <div class="form__item-box">
+            <label class="form__item">
+              <span class="form__item-title">Количество</span>
+              <input class="form__item-input" type="text" value="1 человек">
+            </label>
+
+            <button class="btn form__btn">Купить билеты</button>
+          </div>
+        </div>
+
+      </form>
     </div>
+  </div>
 
-    
 
-    <script type="module" src="/main.js"></script>
-  </body>
+
+  <script type="module" src="/main.js"></script>
+</body>
+
 </html>

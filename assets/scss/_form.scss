@@ -63,6 +63,9 @@
       transform: translateY(0);
     }
 
+    .vanilla-calendar-arrow {
+      pointer-events: unset;
+    }
     .vanilla-calendar-day__btn {
       background-color: $c-base;
     }

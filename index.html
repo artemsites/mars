@@ -51,45 +51,49 @@
 
   <div class="popup" id="js-popup">
     <div class="popup__container container">
-      <div class="popup__box">
-        <h2 class="popup__title">Бронирование<br>билетов</h2>
-        <button class="popup__close" id="js-close-popup">
-          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
-            <path d="M0 1.71429L1.71429 4.08718e-07L12 10.2857L10.2857 12L0 1.71429Z" fill="#D9D9D9" />
-            <path d="M1.71429 12L0 10.2857L10.2857 0L12 1.71429L1.71429 12Z" fill="#D9D9D9" />
-          </svg>
-        </button>
+
+      <div class="popup__wrapper">
+        <div class="popup__box">
+          <h2 class="popup__title js-popup-title" style="--msChange: 500ms;">Бронирование<br>билетов</h2>
+          <button class="popup__close" id="js-close-popup">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path d="M0 1.71429L1.71429 4.08718e-07L12 10.2857L10.2857 12L0 1.71429Z" fill="#D9D9D9" />
+              <path d="M1.71429 12L0 10.2857L10.2857 0L12 1.71429L1.71429 12Z" fill="#D9D9D9" />
+            </svg>
+          </button>
+        </div>
+  
+        <form class="form popup__form js-form">
+          <div class="form__box">
+            <div class="form__item-box">
+              <label class="form__item js-get-calendar">
+                <span class="form__item-title">Дата заезда</span>
+                <input class="form__item-input js-from-date-from" type="text" value="">
+              </label>
+              <div class="form__item-calendar js-calendar"></div>
+            </div>
+  
+            <div class="form__item-box">
+              <label class="form__item js-get-calendar">
+                <span class="form__item-title">Дата выезда</span>
+                <input class="form__item-input js-from-date-to" type="text" value="">
+              </label>
+              <div class="form__item-calendar js-calendar"></div>
+            </div>
+  
+            <div class="form__item-box">
+              <label class="form__item">
+                <span class="form__item-title">Количество</span>
+                <input class="form__item-input js-form-people-count" type="text" value="1 человек">
+              </label>
+  
+              <button class="btn form__btn" type="submit">Купить билеты</button>
+            </div>
+          </div>
+  
+        </form>
       </div>
 
-      <form class="form popup__form">
-        <div class="form__box">
-          <div class="form__item-box">
-            <label class="form__item js-get-calendar">
-              <span class="form__item-title">Дата заезда</span>
-              <input class="form__item-input" type="text" value="">
-            </label>
-            <div class="form__item-calendar js-calendar"></div>
-          </div>
-
-          <div class="form__item-box">
-            <label class="form__item js-get-calendar">
-              <span class="form__item-title">Дата выезда</span>
-              <input class="form__item-input" type="text" value="">
-            </label>
-            <div class="form__item-calendar js-calendar"></div>
-          </div>
-
-          <div class="form__item-box">
-            <label class="form__item">
-              <span class="form__item-title">Количество</span>
-              <input class="form__item-input" type="text" value="1 человек">
-            </label>
-
-            <button class="btn form__btn">Купить билеты</button>
-          </div>
-        </div>
-
-      </form>
     </div>
   </div>
 

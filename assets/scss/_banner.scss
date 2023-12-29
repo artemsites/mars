@@ -2,6 +2,9 @@ $mtTitle: 11.96rem;
 $ptTitle: 5.9rem;
 $ptSuptitle: 1.05rem;
 $hTitle: 37.95rem;
+$differentMC: 0.34rem;
+
+$animationDuration: 1200ms;
 
 .banner {
   height: 100vh;
@@ -9,34 +12,32 @@ $hTitle: 37.95rem;
   display: flex;
   align-items: center;
 
-  // background-image: url('/assets/images/space.jpg');
-  // background-size: cover;
-  // background-position: center;
-  // background-repeat: no-repeat;
-
   &__content {
     display: flex;
-    // transform: translateY(-2.31rem); 
 
     margin-top: $mtTitle;
   }
+
   &__decor-line {
     width: 0.125rem;
-    height: $hTitle;
 
     display: inline-flex;
     flex-shrink: 0;
     background: #D9D9D9;
 
+    height: 0rem;
+    animation-name: decorFullHeight;
+    animation-duration: $animationDuration;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+
     margin-right: 1.81rem;
     position: relative;
-    z-index: 5;
+    z-index: 10;
 
     &::before,
     &::after {
       content: "";
-      width: 0.375rem;
-      height: 0.375rem;
       background: #D9D9D9;
       flex-shrink: 0;
       border-radius: 50%;
@@ -44,10 +45,23 @@ $hTitle: 37.95rem;
       left: 50%;
     }
     &::before {
+      width: 0.375rem;
+      height: 0.375rem;
+
       top: 0;
       transform: translate(-50%, -50%);
     }
     &::after {
+      width: 0.625rem;
+      height: 0.625rem;
+
+      opacity: 0;
+      animation-name: fadeIn;
+      animation-duration: $animationDuration;
+      animation-delay: $animationDuration;
+      animation-timing-function: ease-in;
+      animation-fill-mode: forwards;
+
       bottom: 0;
       transform: translate(-50%, 50%);
     }
@@ -66,8 +80,14 @@ $hTitle: 37.95rem;
     text-transform: uppercase;
     line-height: 0.704;
 
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-duration: $animationDuration;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+
     position: relative;
-    z-index: 5;
+    z-index: 10;
   }
 
   &__title {
@@ -77,37 +97,195 @@ $hTitle: 37.95rem;
     display: flex;
     justify-content: center;
     overflow: hidden;
-    color: #fff;
     font-family: "Bebas Neue", sans-serif;
     font-size: 44.70344rem;
     letter-spacing: -0.67056rem;
     line-height: 0.92;
 
     background-image: url("/assets/images/space.jpg");
-    background-size: cover;
-    background-position: 51% 103vh;
+    background-size: auto 100vh;
     mix-blend-mode: darken;
+    
+    background-position: 18vw 103vh;
+    animation-name: backgroundPositionMoveX;
+    animation-duration: $animationDuration;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
 
     position: absolute;
     left: 0;
     top: 0;
-    z-index: 1;
+    z-index: 5;
+
+    &._left {
+      animation-name: backgroundPositionMoveXLeft;
+      animation-duration: 500ms;
+      animation-timing-function: ease-in;
+    }
+    &._center {
+      animation-name: backgroundPositionMoveXCenter;
+      animation-duration: 500ms;
+      animation-timing-function: ease-in;
+    }
+    &._right {
+      animation-name: backgroundPositionMoveXRight;
+      animation-duration: 500ms;
+      animation-timing-function: ease-in;
+    }
+    &._from-right {
+      animation-name: backgroundPositionMoveXFromight;
+      animation-duration: 500ms;
+      animation-timing-function: ease-in;
+    }
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: 100%;
+
+      background-image: url("/assets/images/smoke-1.png")/* , url("/assets/images/smoke-2.png") */;
+      background-repeat: repeat;
+      background-size: 160% 110%;
+
+      opacity: 0;
+      background-position: 0 50%;
+      animation-name: smokeToLeft;
+      animation-duration: 6000ms;
+      animation-delay: 750ms;
+      animation-timing-function: linear;
+      animation-iteration-count: 2;
+
+      position: absolute;
+      left: 0;
+      top: 0;
+      // z-index: 5;
+    }
 
     &-self {
       height: $hTitle;
+      padding-top: $ptTitle;
+      
+      opacity: 0;
+      color: #000;
+      animation-name: fromDark;
+      animation-duration: $animationDuration;
+      animation-delay: $animationDuration;
+      animation-timing-function: ease-in;
+      animation-fill-mode: forwards;
+
       transform: translateX(0.2rem);
       margin-top: 12.02rem;
-      padding-top: $ptTitle;
+      position: relative;
+      z-index: 10;
     }
 
     &-video {
+      object-fit: cover;
+      object-position: center;
+
+      opacity: 0;
+      animation-name: fadeIn;
+      animation-duration: $animationDuration;
+      // animation-delay: calc($animationDuration - 750ms);
+      animation-timing-function: ease-in;
+      animation-fill-mode: forwards;
+
       transform: translateX(0.2rem);
       z-index: 0;
       position: absolute;
-      object-fit: cover;
-      object-position: center;
     }
   }
 
 
+}
+
+
+@keyframes decorFullHeight {
+  // 0% {
+  //   height: 0rem;
+  // }
+  100% {
+    height: calc($hTitle - $differentMC);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fromDark {
+  // 0% {
+  //   opacity: 0;
+  // }
+  100% {
+    color: #fff;
+    opacity: 1;
+  }
+}
+
+@keyframes backgroundPositionMoveX {
+  // 0% {
+  //   background-position: 0 103vh;
+  // }
+  100% {
+    background-position: 51% 103vh;
+  }
+}
+
+@keyframes backgroundPositionMoveXLeft {
+  0% {
+    background-position: -3vw 103vh;
+  }
+  100% {
+    background-position: 8vw 103vh;
+  }
+}
+@keyframes backgroundPositionMoveXCenter {
+  0% {
+    background-position: 8vw 103vh;
+  }
+  100% {
+    background-position: -3vw 103vh;
+  }
+}
+@keyframes backgroundPositionMoveXRight {
+  0% {
+    background-position: -3vw 103vh;
+  }
+  100% {
+    background-position: -16vw 103vh;
+  }
+}
+@keyframes backgroundPositionMoveXFromight {
+  0% {
+    background-position: -16vw 103vh;
+  }
+  100% {
+    background-position: -3vw 103vh;
+  }
+}
+
+@keyframes smokeToLeft {
+  0% {
+    opacity: 0;
+    background-position: 0 50%;
+  }
+  33% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  66% {
+    opacity: 0.45;
+  }
+  100% {
+    opacity: 0;
+    background-position: 100% 50%;
+  }
 }

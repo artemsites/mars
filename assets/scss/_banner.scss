@@ -106,7 +106,7 @@ $animationDuration: 1200ms;
     background-size: auto 100vh;
     mix-blend-mode: darken;
     
-    background-position: 18vw 103vh;
+    background-position: 18vw 100%;
     animation-name: backgroundPositionMoveX;
     animation-duration: $animationDuration;
     animation-timing-function: ease-in;
@@ -230,43 +230,43 @@ $animationDuration: 1200ms;
 
 @keyframes backgroundPositionMoveX {
   // 0% {
-  //   background-position: 0 103vh;
+  //   background-position: 0 100%;
   // }
   100% {
-    background-position: 51% 103vh;
+    background-position: 51% 100%;
   }
 }
 
 @keyframes backgroundPositionMoveXLeft {
   0% {
-    background-position: -3vw 103vh;
+    background-position: -3vw 100%;
   }
   100% {
-    background-position: 8vw 103vh;
+    background-position: 8vw 100%;
   }
 }
 @keyframes backgroundPositionMoveXCenter {
   0% {
-    background-position: 8vw 103vh;
+    background-position: 8vw 100%;
   }
   100% {
-    background-position: -3vw 103vh;
+    background-position: -3vw 100%;
   }
 }
 @keyframes backgroundPositionMoveXRight {
   0% {
-    background-position: -3vw 103vh;
+    background-position: -3vw 100%;
   }
   100% {
-    background-position: -16vw 103vh;
+    background-position: -16vw 100%;
   }
 }
 @keyframes backgroundPositionMoveXFromight {
   0% {
-    background-position: -16vw 103vh;
+    background-position: -16vw 100%;
   }
   100% {
-    background-position: -3vw 103vh;
+    background-position: -3vw 100%;
   }
 }
 

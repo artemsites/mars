@@ -58,7 +58,7 @@ $transitionBackground: 500ms;
   }
 
   &__title {
-    width: fit-content;
+    max-width: 49.5rem;
 
     color: $c-dark;
     font-family: "Bebas Neue", sans-serif;

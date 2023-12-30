@@ -39,7 +39,8 @@ document.addEventListener('DOMContentLoaded', function () {
     let getCalendars = document.querySelectorAll('.js-get-calendar');
     getCalendars.forEach(getCalendar => {
       getCalendar.addEventListener("click", function(e) {
-        getCalendar.nextElementSibling.classList.add('_active');
+        getCalendar.querySelector('.js-calendar').classList.add('_active')
+        // getCalendar.nextElementSibling.classList.add('_active');
       });
     }) 
 

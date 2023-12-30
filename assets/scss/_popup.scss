@@ -36,18 +36,18 @@ $transitionBackground: 500ms;
 
     &::before {
       content: "";
-      width: 0%;
-      height: 0%;
+      width: 0;
+      height: 0;
   
       border-radius: 50%;
       background-color: $c-base;
-      transform: translate(30%, -35%);
   
       transition: all $transitionBackground;
   
+      transform: scale(0);
+      right: 5.7rem;
+      top: 2.5rem;
       position: absolute;
-      right: 6.5rem;
-      top: 3rem;
       z-index: -1;
     }
   }
@@ -111,10 +111,12 @@ $transitionBackground: 500ms;
     }
 
     &__container {
-
       &::before {
-        width: 210%;
-        height: 210%;
+        // width: 210%;
+        // height: 210%;
+        width: 1rem;
+        height: 1rem;
+        transform: scale(250);
       }
     }
   }

@@ -39,8 +39,9 @@ document.addEventListener('DOMContentLoaded', function () {
     let getCalendars = document.querySelectorAll('.js-get-calendar');
     getCalendars.forEach(getCalendar => {
       getCalendar.addEventListener("click", function(e) {
-        getCalendar.querySelector('.js-calendar').classList.add('_active')
-        // getCalendar.nextElementSibling.classList.add('_active');
+        console.log('TEST')
+        getCalendar.nextElementSibling.classList.toggle('_active')
+        // getCalendar.querySelector('.js-calendar').classList.add('_active')
       });
     }) 
 
@@ -65,19 +66,17 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         actions: {
           clickDay(event, self) {
-            // console.log(event);
+            // console.log(event.target);
             // console.log(self);
             let selDateText = formatDate( {date: self.selectedDates[0]} )
 
             input.value = selDateText;
 
-            // @note календарь и так пока закрывается при нажатии вне .form__item-box
-            // self.HTMLElement.classList.remove('_active');
+            self.HTMLOriginalElement.classList.remove('_active');
           },
         },
       });
       calendar.init()
-
     })
 
 
@@ -85,7 +84,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // close calendar
     popup.addEventListener("click",function(e) {
       let isFormItemBox = e.target.closest('.form__item-box')
-      // @note но тогда календарь закрывается и при нажатии на дату в календаре
       if (!isFormItemBox) {
         elCalendars.forEach(elCalendar => {
             elCalendar.classList.remove('_active');

@@ -5,7 +5,7 @@ V Google Chrome 93
 
 
 Microsoft Edge 92       https://en.softonic.com/download/microsoft-edge/windows/post-download/v/96.0.1054.53
-Safari 12
+Safari 12               https://github.com/sickcodes/Docker-OSX
 
 
 

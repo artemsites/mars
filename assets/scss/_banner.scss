@@ -63,9 +63,9 @@ $animationDuration: 1200ms;
   &__content {
     display: flex;
 
+    transform: translateY(-2.6%);
     position: relative;
     z-index: 10;
-    margin-top: 11.94rem;
   }
 
   &__decor-line {
@@ -210,43 +210,43 @@ $animationDuration: 1200ms;
 
 @keyframes backgroundPositionMoveXStart {
   0% {
-    background-position: 0vw 22%;
+    background-position: 0vw 49%;
   }
   100% {
-    background-position: -15.4vw 22%;
+    background-position: -16.6vw 49%;
   }
 }
 
 @keyframes backgroundPositionMoveXLeft {
   0% {
-    background-position: -15.4vw 22%;
+    background-position: -16.6vw 49%;
   }
   100% {
-    background-position: -2.5vw 22%;
+    background-position: -2.5vw 49%;
   }
 }
 @keyframes backgroundPositionMoveXCenter {
   0% {
-    background-position: -2.5vw 22%;
+    background-position: -2.5vw 49%;
   }
   100% {
-    background-position: -15.4vw 22%;
+    background-position: -16.6vw 49%;
   }
 }
 @keyframes backgroundPositionMoveXRight {
   0% {
-    background-position: -15.4vw 22%;
+    background-position: -16.6vw 49%;
   }
   100% {
-    background-position: -27vw 22%;
+    background-position: -27vw 49%;
   }
 }
 @keyframes backgroundPositionMoveXFromRight {
   0% {
-    background-position: -27vw 22%;
+    background-position: -27vw 49%;
   }
   100% {
-    background-position: -15.4vw 22%;
+    background-position: -16.6vw 49%;
   }
 }
 

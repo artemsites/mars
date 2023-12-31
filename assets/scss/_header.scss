@@ -6,9 +6,14 @@
   position: absolute;
   z-index: 100;
   left: 50%;
-  top: 1.87rem;
+  top: 1.93rem;
 
   &__btn {
+    min-height: 2.5rem;
+    width: auto;
+    flex-grow: 1;
+    max-width: 11.2rem;
+    
     margin-left: 2.5rem;
   }
 }

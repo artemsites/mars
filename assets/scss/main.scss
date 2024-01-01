@@ -20,10 +20,10 @@
 
 @import 'base';
 
-@import 'container';
 
-@import 'header';
-@import 'nav';
+
+// Атомы
+@import 'container';
 
 @import 'banner';
 
@@ -32,3 +32,13 @@
 @import 'popup';
 
 @import 'form';
+
+
+
+// Молекулы
+
+
+
+// Организмы
+@import 'nav';
+@import 'header';

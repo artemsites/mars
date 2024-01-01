@@ -4,6 +4,10 @@
   gap: 1.9rem;
 
   margin-left: auto;
+
+  @media screen and (max-width: $vw-size-7) {
+    gap: 1rem;
+  }
   
   &__item {
     color: $c-base;
@@ -11,8 +15,13 @@
 
     transition: color 300ms;
 
+    @media screen and (max-width: $vw-size-7) {
+      font-size: 0.9rem;
+    }
+
     &:hover {
       color: $c-red;
     }
   }
+
 }

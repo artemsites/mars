@@ -1,19 +1,129 @@
 .header {
   display: flex;
   align-items: center;
-  
+
+  padding-top: 1.93rem;
+
   transform: translateX(-50%);
   position: absolute;
   z-index: 100;
   left: 50%;
-  top: 1.93rem;
+  // top: 1.93rem;
+
+  @media screen and (max-width: $vw-size-5) {
+    padding-top: 0.9rem;
+  }
 
   &__btn {
-    min-height: 2.5rem;
     width: auto;
-    flex-grow: 1;
-    max-width: 11.2rem;
-    
+    padding: 0 1.1rem;
+    // max-width: 11.2rem;
+
     margin-left: 2.5rem;
+
+    @media screen and (max-width: $vw-size-7) {
+      // max-width: 10.5rem;
+      margin-left: 1rem;
+    }
+
+    @media screen and (max-width: $vw-size-5) {
+      margin-left: auto;
+    }
+
+    span {
+      @media screen and (max-width: $vw-size-6) {
+        display: none;
+      }
+    }
   }
+
+  &__logo {
+    @media screen and (max-width: $vw-size-7) {
+      max-width: 4.4rem;
+    }
+  }
+
+  &__nav {
+    @media screen and (max-width: $vw-size-5) {
+      background-color: $c-base;
+
+      transition: 200ms ease-out;
+
+      transform: translateX(-110%);
+      position: fixed;
+      flex-direction: column;
+      left: 0;
+      top: 0;
+      padding: 2.2rem;
+
+      &._opened {
+        transition: 500ms cubic-bezier(.47, 1.19, .81, 1.43);
+
+        transform: translateX(0);
+      }
+
+      .nav__item {
+        color: $c-dark;
+
+        &:hover {
+          color: $c-red;
+        }
+      }
+    }
+
+  }
+
+  &__menu-toggle {
+    display: none;
+
+    @media screen and (max-width: $vw-size-5) {
+      width: 3rem;
+      height: 2.6rem;
+
+      display: inline-flex;
+      flex-direction: column;
+
+      gap: 0.4rem;
+      padding: 0.6rem;
+      border-radius: 0.6rem;
+      background-color: transparent;
+      color: $c-base;
+
+      margin-left: 1rem;
+
+      span {
+        height: 0.2rem;
+        width: 1.8rem;
+        background-color: $c-base;
+        transition: transform .5s, opacity .25s;
+      }
+
+      &._opened span {
+        &:nth-child(1) {
+          transform: translateY(0.6rem) rotate(45deg);
+          transform-origin: center;
+        }
+
+        &:nth-child(2) {
+          opacity: 0;
+        }
+
+        &:nth-child(3) {
+          transform: translateY(-0.6rem) rotate(-45deg);
+          transform-origin: center;
+        }
+      }
+
+
+      &:hover {
+        background-color: transparent;
+        color: $c-red;
+      }
+    }
+
+    @media screen and (max-width: $vw-size-2) {
+      margin-left: 0.5rem;
+    }
+  }
+
 }

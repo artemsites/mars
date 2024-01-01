@@ -7,6 +7,10 @@ import {setCaretPosition} from './helpers/setCaretPosition';
 
 
 
+import './widgets/menu.js';
+
+
+
 document.addEventListener('DOMContentLoaded', function () {
   try {
 

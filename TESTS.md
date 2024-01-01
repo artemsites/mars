@@ -5,7 +5,8 @@ V Google Chrome 93
 
 
 Microsoft Edge 92       https://en.softonic.com/download/microsoft-edge/windows/post-download/v/96.0.1054.53
-Safari 12               https://github.com/sickcodes/Docker-OSX
+Safari 12               https://github.com/sickcodes/Docker-OSX     https://github.com/kholia/OSX-KVM    https://www.linux.org.ru/articles/desktop/17166844   
+                          https://computingforgeeks.com/how-to-run-macos-on-kvm-qemu/    https://github.com/foxlet/macOS-Simple-KVM
 
 
 

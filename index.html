@@ -14,9 +14,9 @@
 
 
   <header class="header container">
-    <img src="/assets/images/logo.svg" alt="Логотип МАРС" class="logo">
+    <img src="/assets/images/logo.svg" alt="Логотип МАРС" class="header__logo logo">
 
-    <nav class="nav">
+    <nav class="header__nav nav js-menu">
       <a href="#" class="nav__item">О марсе</a>
       <a href="#" class="nav__item">Процесс</a>
       <a href="#" class="nav__item">Билеты</a>
@@ -24,7 +24,12 @@
       <a href="#" class="nav__item">Контакты</a>
     </nav>
 
-    <button class="header__btn btn" id="js-get-popup" aria-label="Кнопка вызова покупки билетов">Купить билеты</button>
+    <button class="header__btn btn" id="js-get-popup" aria-label="Кнопка вызова покупки билетов"><span>Купить</span>&nbsp;билеты</button>
+    <button class="btn header__menu-toggle js-toggle-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </header>
 
   <main>

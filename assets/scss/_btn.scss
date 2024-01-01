@@ -1,6 +1,7 @@
 .btn {
+  height: 2.5rem;
+
   display: flex;
-  padding: 0.625rem 0.9375rem;
   justify-content: center;
   align-items: center;
 
@@ -13,6 +14,11 @@
   text-transform: uppercase;
 
   transition: background-color 300ms, color 300ms;
+
+  @media screen and (max-width: $vw-size-7) {
+    height: 2.2rem;
+    font-size: 0.9rem;
+  }
 
   &:hover {
     background-color: $c-red;

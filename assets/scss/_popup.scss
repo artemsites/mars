@@ -63,9 +63,10 @@ $transitionBackground: 500ms;
     color: $c-dark;
     font-family: "Bebas Neue", sans-serif;
     font-size: 7.125rem;
+    font-weight: 700;
     font-style: normal;
     line-height: normal;
-    letter-spacing: 0.17813rem;
+    letter-spacing: 0.19rem;
     text-transform: uppercase;
   }
 
@@ -94,6 +95,10 @@ $transitionBackground: 500ms;
       width: 0.75rem;
       height: 0.75rem;
     }
+  }
+
+  &__form {
+    margin-top: 5.1rem;
   }
 
   &._active {

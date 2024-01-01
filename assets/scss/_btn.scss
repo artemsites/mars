@@ -24,4 +24,11 @@
     background-color: $c-red;
     color: $c-base;
   }
+
+  > span {
+    display: inline-flex;
+
+    transform: translateY(0.07rem);
+  }
+
 }

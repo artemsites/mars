@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
 
-  padding-top: 1.93rem;
+  padding-top: 1.92rem;
 
   transform: translateX(-50%);
   position: absolute;
@@ -16,10 +16,10 @@
 
   &__btn {
     width: auto;
-    padding: 0 1.1rem;
+    padding: 0 0.9rem;
     // max-width: 11.2rem;
 
-    margin-left: 2.5rem;
+    margin-left: 2.7rem;
 
     @media screen and (max-width: $vw-size-7) {
       // max-width: 10.5rem;
@@ -30,7 +30,7 @@
       margin-left: auto;
     }
 
-    span {
+    > span > span {
       @media screen and (max-width: $vw-size-6) {
         display: none;
       }

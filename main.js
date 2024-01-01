@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
     elCalendars.forEach(elCalendar => {
       let input = elCalendar.closest('.form__item-box').querySelector('.form__item-input')
       let curDate = new Date()
-      input.value = formatDate({ date: curDate })
+      // input.value = formatDate({ date: curDate })
 
       let selDateDefault = formatDate({ date: curDate, sep: '-', order: 'ymd' }) // to '2023-12-29'
 

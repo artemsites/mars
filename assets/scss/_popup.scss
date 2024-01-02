@@ -34,6 +34,10 @@ $transitionBackground: 500ms;
 
     position: relative;
 
+    @media screen and (max-width: $vw-size-7-5) {
+      padding-top: calc(6.8vw + 2rem);
+    }
+
     &::before {
       content: "";
       width: 0;
@@ -68,10 +72,12 @@ $transitionBackground: 500ms;
     line-height: normal;
     letter-spacing: 0.19rem;
     text-transform: uppercase;
-  }
 
-  &__title {
     transition: opacity var(--msChange);
+
+    @media screen and (max-width: $vw-size-7-5) {
+      font-size: 11.4vw;
+    }
 
     &._hidden {
       opacity: 0;
@@ -99,6 +105,10 @@ $transitionBackground: 500ms;
 
   &__form {
     margin-top: 5.1rem;
+
+    @media screen and (max-width: $vw-size-7-5) {
+      margin-top: calc(5.7vw + 1.5rem);
+    }
   }
 
   &._active {

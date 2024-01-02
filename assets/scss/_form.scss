@@ -3,6 +3,16 @@
   &__box {
     display: flex;
     gap: 1.25rem;
+
+    @media screen and (max-width: $vw-size-6-5) {
+      max-width: 60vw;
+
+      flex-direction: column;
+    }
+
+    @media screen and (max-width: $vw-size-4) {
+      max-width: unset;
+    }
   }
 
   &__item {
@@ -42,6 +52,53 @@
       line-height: normal;
       padding-bottom: 0.62rem
     }
+
+    &-calendar.vanilla-calendar.vanilla-calendar_default {
+      opacity: 0;
+      pointer-events: none;
+      background-color: $c-base;
+      
+      transition: 500ms;
+  
+      transform: translateY(1rem);
+      position: absolute;
+      top: 100%;
+      z-index: 10;
+  
+      &._active {
+        opacity: 1;
+        pointer-events: initial;
+  
+        transform: translateY(0);
+      }
+  
+      .vanilla-calendar-arrow {
+        pointer-events: unset;
+      }
+      .vanilla-calendar-day__btn {
+        background-color: $c-base;
+      }
+      .vanilla-calendar-day__btn_weekend,
+      .vanilla-calendar-week__day_weekend {
+        color: $c-red;
+        &.vanilla-calendar-day__btn_selected {
+          &:hover {
+            background-color: $c-red;
+          }
+        }
+      }
+      .vanilla-calendar-day__btn_today {
+        font-weight: 900;
+        color: $c-dark;
+      }
+      .vanilla-calendar-day__btn_selected {
+        color: $c-red;
+        font-weight: 900;
+      }
+      .vanilla-calendar-header__content {
+        pointer-events: none;
+      }
+    }
   }
 
   &__item-box {
@@ -52,51 +109,7 @@
     position: relative;
   }
   
-  &__item-calendar.vanilla-calendar.vanilla-calendar_default {
-    opacity: 0;
-    pointer-events: none;
-    background-color: $c-base;
-    
-    transition: 500ms;
 
-    transform: translateY(1rem);
-    position: absolute;
-    top: 100%;
-
-    &._active {
-      opacity: 1;
-      pointer-events: initial;
-
-      transform: translateY(0);
-    }
-
-    .vanilla-calendar-arrow {
-      pointer-events: unset;
-    }
-    .vanilla-calendar-day__btn {
-      background-color: $c-base;
-    }
-    .vanilla-calendar-day__btn_weekend,
-    .vanilla-calendar-week__day_weekend {
-      color: $c-red;
-      &.vanilla-calendar-day__btn_selected {
-        &:hover {
-          background-color: $c-red;
-        }
-      }
-    }
-    .vanilla-calendar-day__btn_today {
-      font-weight: 900;
-      color: $c-dark;
-    }
-    .vanilla-calendar-day__btn_selected {
-      color: $c-red;
-      font-weight: 900;
-    }
-    .vanilla-calendar-header__content {
-      pointer-events: none;
-    }
-  }
 
 
   &__btn {
@@ -106,6 +119,10 @@
     color: $c-base;
 
     margin-top: 3.75rem;
+
+    @media screen and (max-width: $vw-size-7-5) {
+      margin-top: calc(2rem + 2.8vw);
+    }
   }
 
 

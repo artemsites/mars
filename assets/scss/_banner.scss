@@ -1,4 +1,8 @@
 $animationDuration: 1200ms;
+$marginBox: 1.81rem;
+$marginBox2: 2.368vw;
+
+
 
 .banner {
   height: 100vh;
@@ -16,6 +20,10 @@ $animationDuration: 1200ms;
   animation-timing-function: ease-in;
   animation-fill-mode: forwards;
 
+  @media screen and (max-width: $vw-size-8) {
+    background-size: cover;
+  }
+
   &::after {
     content: "";
     width: 100%;
@@ -23,8 +31,8 @@ $animationDuration: 1200ms;
 
     background-image: url("/assets/images/smoke-1.png"), url("/assets/images/smoke-2.png");
     background-blend-mode: hard-light;
-    background-repeat: repeat;
-    background-size: 133vw auto;
+    background-repeat: repeat-x;
+    background-size: cover, cover;
 
     opacity: 0;
     animation-name: smokeToLeft;
@@ -35,8 +43,9 @@ $animationDuration: 1200ms;
 
     position: absolute;
     z-index: 5;
-    left: 0;
     top: 0;
+    left: 0;
+
   }
 
   &._left {
@@ -81,9 +90,14 @@ $animationDuration: 1200ms;
     animation-timing-function: ease-in;
     animation-fill-mode: forwards;
 
-    margin-right: 1.81rem;
+    margin-right: $marginBox;
     position: relative;
     z-index: 10;
+
+    @media screen and (max-width: $vw-size-8) {
+      animation-name: decorFullHeightMobile;
+      margin-right: $marginBox2;
+    }
 
     &::before,
     &::after {
@@ -118,8 +132,15 @@ $animationDuration: 1200ms;
   }
   
   &__box {
+    width: 100%;
+
     display: flex;
     flex-direction: column;
+
+    // margin-right: $marginBox;
+    @media screen and (max-width: $vw-size-8) {
+      margin-right: $marginBox2;
+    }
   }
 
   &__suptitle {
@@ -143,11 +164,27 @@ $animationDuration: 1200ms;
     margin-bottom: 3rem;
     position: relative;
     z-index: 10;
+
+    @media screen and (max-width: $vw-size-8) {
+      padding-top: calc(0.7rem + 0.7vw);
+      font-size: calc(0.7rem + 2.013vw);
+
+      margin-bottom: calc(0.7rem + 2.987vw);
+    }
   }
 
   &__title {
-    width: 71.56rem;
+    // разница 2,23196881092
+    // width: 70.7rem;
+    // height: 31.676rem;
+
+    width: 71.5rem;
     height: 32.1rem;
+    @media screen and (max-width: $vw-size-8) {
+      width: calc(95vw - 2rem);
+      //94.7vw/2,23196881092
+      height: calc(42.5633187772vw - 0.896069868994rem);
+    }
     
     display: flex;
 
@@ -158,11 +195,10 @@ $animationDuration: 1200ms;
     animation-timing-function: ease-in;
     animation-fill-mode: forwards;
 
-    position: relative;
 
     &-self {
-      width: 100%;
-      height: 100%;
+      width: 0;
+      height: 0;
     }
 
     &-video {
@@ -178,8 +214,6 @@ $animationDuration: 1200ms;
       // animation-delay: calc($animationDuration - 750ms);
       animation-timing-function: ease-in;
       animation-fill-mode: forwards;
-
-      position: absolute;
     }
   }
 
@@ -190,6 +224,14 @@ $animationDuration: 1200ms;
 @keyframes decorFullHeight {
   100% {
     height: 37.28rem;
+    @media screen and (max-width: $vw-size-8) {
+      height: calc((0.7rem + 0.7vw) + ((0.7rem + 2.013vw) * 0.704) + (0.7rem + 2.987vw) + (42.5633187772vw - 0.896069869rem));
+    }
+  }
+}
+@keyframes decorFullHeightMobile {
+  100% {
+    height: calc((0.7rem + 0.7vw) + ((0.7rem + 2.013vw) * 0.704) + (0.7rem + 2.987vw) + (42.5633187772vw - 0.896069869rem));
   }
 }
 

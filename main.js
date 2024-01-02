@@ -1,11 +1,9 @@
 import VanillaCalendar from 'vanilla-calendar-pro';
 import 'vanilla-calendar-pro/build/vanilla-calendar.min.css';
-import {formatDate} from './helpers/formatDate';
-import {listenerWheel} from './helpers/listenerWheel';
-import {getDeclOfNum} from './helpers/getDeclOfNum';
-import {setCaretPosition} from './helpers/setCaretPosition';
-
-
+import { formatDate } from './helpers/formatDate';
+import { listenerWheel } from './helpers/listenerWheel';
+import { getDeclOfNum } from './helpers/getDeclOfNum';
+import { setCaretPosition } from './helpers/setCaretPosition';
 
 import './widgets/menu.js';
 
@@ -13,7 +11,6 @@ import './widgets/menu.js';
 
 document.addEventListener('DOMContentLoaded', function () {
   try {
-
     
     let btnOpenPopup = document.querySelector('#js-get-popup');
     let firstOpenPopup = true
@@ -21,13 +18,13 @@ document.addEventListener('DOMContentLoaded', function () {
     let popup = document.querySelector('#js-popup');
     let popupTitle = popup.querySelector('.js-popup-title')
     
-    
     let form = popup.querySelector('.js-form');
     let dateFrom = form.querySelector('.js-from-date-from')
     let dateTo = form.querySelector('.js-from-date-to')
     let formPeopleCount = form.querySelector('.js-form-people-count')
 
     let peopleCount = Number(formPeopleCount.value.split(' ')[0])
+
 
 
     btnOpenPopup.addEventListener("click",function(e){

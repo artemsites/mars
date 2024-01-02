@@ -10,9 +10,15 @@ $marginBox2: 2.368vw;
   display: flex;
   align-items: center;
 
-  background-image: url("/assets/images/space.jpg");
+  // background-image: url("/assets/images/space.jpg");
   background-repeat: repeat;
   background-size: 133vw auto;
+
+  background-image: url(/assets/images/space.jpg);
+  background-image: image-set(
+    url(/assets/images/space.webp),
+    url(/assets/images/space.jpg)
+  );
 
   // background-position: 0vw 100%;
   animation-name: backgroundPositionMoveXStart;
@@ -30,6 +36,16 @@ $marginBox2: 2.368vw;
     height: 100%;
 
     background-image: url("/assets/images/smoke-1.png"), url("/assets/images/smoke-2.png");
+
+    background-image: image-set(
+      url("/assets/images/smoke-1.webp"),
+      url("/assets/images/smoke-1.png")
+    ), 
+    image-set(
+      url("/assets/images/smoke-2.webp"),
+      url("/assets/images/smoke-2.png")
+    );
+
     background-blend-mode: hard-light;
     background-repeat: repeat-x;
     background-size: cover, cover;

@@ -2,16 +2,16 @@ export function listenerWheel(el, callback) {
   if (el.addEventListener) {
     if ('onwheel' in document) {
       // IE9+, FF17+, Ch31+
-      el.addEventListener("wheel", onWheel);
+      el.addEventListener("wheel", onWheel, {passive: true});
     } else if ('onmousewheel' in document) {
       // устаревший вариант события
-      el.addEventListener("mousewheel", onWheel);
+      el.addEventListener("mousewheel", onWheel, {passive: true});
     } else {
       // Firefox < 17
-      el.addEventListener("MozMousePixelScroll", onWheel);
+      el.addEventListener("MozMousePixelScroll", onWheel, {passive: true});
     }
   } else { // IE8-
-    el.attachEvent("onmousewheel", onWheel);
+    el.attachEvent("onmousewheel", onWheel, {passive: true});
   }
 
   function onWheel(e) {

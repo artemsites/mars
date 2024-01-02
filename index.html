@@ -6,6 +6,7 @@
   <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Точка назначения: МАРС</title>
+  <meta name="description" content="Точка назначения: МАРС...">
 
   <link rel="stylesheet" href="/assets/scss/main.scss">
 </head>
@@ -24,8 +25,8 @@
       <a href="#" class="nav__item">Контакты</a>
     </nav>
 
-    <button class="header__btn btn" id="js-get-popup" aria-label="Кнопка вызова покупки билетов"><span> <span>Купить&nbsp;</span>билеты </span></button>
-    <button class="btn header__menu-toggle js-toggle-menu">
+    <button class="header__btn btn" id="js-get-popup"><span> <span>Купить&nbsp;</span>билеты </span></button>
+    <button class="btn header__menu-toggle js-toggle-menu" aria-label="Кнопка открытия меню на мобильном экране">
       <span></span>
       <span></span>
       <span></span>
@@ -59,7 +60,25 @@
            
             <!-- style="mask-image: url(#mars)"  -->
             <!-- style="mask-image: url(/assets/images/mars.svg);" -->
-            <video style="clip-path: url(#mars)" class="banner__title-video" src="/assets/videos/mars.m4v" muted preload="auto" loop autoplay></video>
+            <video style="clip-path: url(#mars)" class="banner__title-video" src="/assets/videos/mars.m4v" muted preload="auto" loop autoplay>
+              <!-- ? -->
+              <source
+                src="/assets/videos/mars.m4v"
+                type="video/x-m4v" />
+              <source
+                src="/assets/videos/mars.m4v"
+                type="video/m4v" />
+              <source
+                src="/assets/videos/mars.m4v"
+                type="video/mp4" />
+
+              <source
+                src="/assets/videos/mars.webm"
+                type="video/webm" />
+              <source
+                src="/assets/videos/mars.mp4"
+                type="video/mp4" />
+            </video>
           </div>
         </div>
 
@@ -76,7 +95,7 @@
       <div class="popup__wrapper">
         <div class="popup__box">
           <h2 class="popup__title js-popup-title" style="--msChange: 500ms;">Бронирование<br>билетов</h2>
-          <button class="popup__close" id="js-close-popup">
+          <button class="popup__close" id="js-close-popup" aria-label="Закрыть всплывающее окно заказа билетов">
             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
               <path d="M0 1.71429L1.71429 4.08718e-07L12 10.2857L10.2857 12L0 1.71429Z" fill="#D9D9D9" />
               <path d="M1.71429 12L0 10.2857L10.2857 0L12 1.71429L1.71429 12Z" fill="#D9D9D9" />

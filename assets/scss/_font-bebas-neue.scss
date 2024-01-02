@@ -9,6 +9,7 @@
 		url('/assets/fonts/BebasNeueRegular.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
@@ -20,6 +21,7 @@
 		url('/assets/fonts/BebasNeueBold.ttf') format('truetype');
 	font-weight: bold;
 	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
@@ -31,6 +33,7 @@
 		url('/assets/fonts/BebasNeueLight.ttf') format('truetype');
 	font-weight: 300;
 	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
@@ -42,6 +45,7 @@
 		url('/assets/fonts/BebasNeue-Thin.ttf') format('truetype');
 	font-weight: 100;
 	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
@@ -53,4 +57,5 @@
 		url('/assets/fonts/BebasNeueBook.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
+	font-display: swap;
 }

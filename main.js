@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     
     let btnOpenPopup = document.querySelector('#js-get-popup');
+    let firstOpenPopup = true
     let btnClosePopup = document.querySelector('#js-close-popup');
     let popup = document.querySelector('#js-popup');
     let popupTitle = popup.querySelector('.js-popup-title')
@@ -31,70 +32,71 @@ document.addEventListener('DOMContentLoaded', function () {
 
     btnOpenPopup.addEventListener("click",function(e){
       popup.classList.add('_active');
+
+      // Загрузка календарей
+      if (firstOpenPopup) {
+        // get-calendar
+        let getCalendars = document.querySelectorAll('.js-get-calendar');
+        getCalendars.forEach(getCalendar => {
+          getCalendar.addEventListener("click", function(e) {
+            getCalendar.nextElementSibling.classList.toggle('_active')
+            // getCalendar.querySelector('.js-calendar').classList.add('_active')
+          });
+        }) 
+
+
+
+        // calendar
+        let elCalendars = form.querySelectorAll('.js-calendar');
+        elCalendars.forEach(elCalendar => {
+          let input = elCalendar.closest('.form__item-box').querySelector('.form__item-input')
+          let curDate = new Date()
+          // input.value = formatDate({ date: curDate })
+
+          let selDateDefault = formatDate({ date: curDate, sep: '-', order: 'ymd' }) // to '2023-12-29'
+
+          const calendar = new VanillaCalendar(elCalendar, {
+            settings: {
+              lang: 'ru-RU',
+
+              selected: {
+                dates: [selDateDefault],
+              },
+            },
+            actions: {
+              clickDay(event, self) {
+                // console.log(event.target);
+                // console.log(self);
+                let selDateText = formatDate( {date: self.selectedDates[0]} )
+
+                input.value = selDateText;
+
+                self.HTMLOriginalElement.classList.remove('_active');
+              },
+            },
+          });
+          calendar.init()
+        })
+
+        // close calendar
+        popup.addEventListener("click",function(e) {
+          let isFormItemBox = e.target.closest('.form__item-box')
+          if (!isFormItemBox) {
+            elCalendars.forEach(elCalendar => {
+                elCalendar.classList.remove('_active');
+            }) 
+          }
+        });
+
+        firstOpenPopup = false
+      }
     });
+
+
 
     btnClosePopup.addEventListener("click",function(e){
       popup.classList.remove('_active');
     });
-
-
-
-    // get-calendar
-    let getCalendars = document.querySelectorAll('.js-get-calendar');
-    getCalendars.forEach(getCalendar => {
-      getCalendar.addEventListener("click", function(e) {
-        console.log('TEST')
-        getCalendar.nextElementSibling.classList.toggle('_active')
-        // getCalendar.querySelector('.js-calendar').classList.add('_active')
-      });
-    }) 
-
-
-
-    // calendar
-    let elCalendars = document.querySelectorAll('.js-calendar');
-    elCalendars.forEach(elCalendar => {
-      let input = elCalendar.closest('.form__item-box').querySelector('.form__item-input')
-      let curDate = new Date()
-      // input.value = formatDate({ date: curDate })
-
-      let selDateDefault = formatDate({ date: curDate, sep: '-', order: 'ymd' }) // to '2023-12-29'
-
-      const calendar = new VanillaCalendar(elCalendar, {
-        settings: {
-          lang: 'ru-RU',
-
-          selected: {
-            dates: [selDateDefault],
-          },
-        },
-        actions: {
-          clickDay(event, self) {
-            // console.log(event.target);
-            // console.log(self);
-            let selDateText = formatDate( {date: self.selectedDates[0]} )
-
-            input.value = selDateText;
-
-            self.HTMLOriginalElement.classList.remove('_active');
-          },
-        },
-      });
-      calendar.init()
-    })
-
-
-
-    // close calendar
-    popup.addEventListener("click",function(e) {
-      let isFormItemBox = e.target.closest('.form__item-box')
-      if (!isFormItemBox) {
-        elCalendars.forEach(elCalendar => {
-            elCalendar.classList.remove('_active');
-        }) 
-      }
-    });
-
 
 
 
@@ -110,8 +112,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     listenerWheel(formPeopleCount, increaseDecreaseCountPeopleInForm)
 
-
-
     formPeopleCount.addEventListener("keydown", function(e) { 
       let testDig = e.key.match(/(\d)/)
       if (testDig) {
@@ -125,8 +125,6 @@ document.addEventListener('DOMContentLoaded', function () {
         e.preventDefault()
       }
     });
-
-
 
     function createStrPeopleCount(peopleCount) {
       return peopleCount + ' ' + getDeclOfNum(peopleCount, ['человек', 'человека', 'человек'])

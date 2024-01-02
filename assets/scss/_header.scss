@@ -51,6 +51,7 @@
 
       transform: translateX(-110%);
       position: fixed;
+      z-index: 105;
       flex-direction: column;
       left: 0;
       top: 0;
@@ -77,14 +78,14 @@
     display: none;
 
     @media screen and (max-width: $vw-size-5) {
-      width: 3rem;
-      height: 2.6rem;
+      // width: 3rem;
+      // height: 2.6rem;
 
       display: inline-flex;
       flex-direction: column;
 
       gap: 0.4rem;
-      padding: 0.6rem;
+      padding: 0.6rem 0 0.6rem 0.6rem;
       border-radius: 0.6rem;
       background-color: transparent;
       color: $c-base;
@@ -94,6 +95,9 @@
       span {
         height: 0.2rem;
         width: 1.8rem;
+
+        flex-shrink: 0;
+        
         background-color: $c-base;
         transition: transform .5s, opacity .25s;
       }

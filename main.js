@@ -45,14 +45,31 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // calendar
         let elCalendars = form.querySelectorAll('.js-calendar');
+        let calState = {
+          start: null,
+          end: null,
+          // elStart: null,
+          // elEnd: null,
+          calStart: null,
+          calEnd: null
+        }
+
         elCalendars.forEach(elCalendar => {
+          const isStartCal = elCalendar.dataset.calendar === 'start'
+          const isEndCal = elCalendar.dataset.calendar === 'end'
+
           let input = elCalendar.closest('.form__item-box').querySelector('.form__item-input')
           let curDate = new Date()
-          // input.value = formatDate({ date: curDate })
+          input.value = formatDate({ date: curDate })
 
           let selDateDefault = formatDate({ date: curDate, sep: '-', order: 'ymd' }) // to '2023-12-29'
+          // console.log('selDateDefault')
+          // console.log(selDateDefault)
 
-          const calendar = new VanillaCalendar(elCalendar, {
+          calState.start = curDate.getTime()
+          calState.end = curDate.getTime()
+
+          let calendar = new VanillaCalendar(elCalendar, {
             settings: {
               lang: 'ru-RU',
 
@@ -62,17 +79,38 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             actions: {
               clickDay(event, self) {
+                if (isStartCal) {
+                  calState.start = new Date(self.selectedDates[0]).getTime()
+                }
+                else if (isEndCal) {
+                  calState.end = new Date(self.selectedDates[0]).getTime()
+                }
                 // console.log(event.target);
                 // console.log(self);
-                let selDateText = formatDate( {date: self.selectedDates[0]} )
+                
+                // При выборе второй даты
+                // Если она меньше стартовой
+                if (isEndCal && calState.end < calState.start) {
+                  // То ничего не делаем
+                } 
+                else {
+                  // Иначе устанавливаем эту дату
+                  let selDateText = formatDate( {date: self.selectedDates[0]} )
+                  input.value = selDateText;
+                  self.HTMLOriginalElement.classList.remove('_active');
 
-                input.value = selDateText;
-
-                self.HTMLOriginalElement.classList.remove('_active');
+                  if (isStartCal && calState.start > calState.end) {
+                    // Установить в второй календарь выбор даты первого календаря
+                    // calState.calEnd
+                  }
+                }
               },
             },
           });
           calendar.init()
+
+          if (isStartCal) calState.calStart = calendar
+          else if (isEndCal) calState.calEnd = calendar
         })
 
         // close calendar

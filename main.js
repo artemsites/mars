@@ -32,11 +32,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // Загрузка календарей
       if (firstOpenPopup) {
+
         // get-calendar
         let getCalendars = document.querySelectorAll('.js-get-calendar');
         getCalendars.forEach(getCalendar => {
           getCalendar.addEventListener("click", function(e) {
-            getCalendar.nextElementSibling.classList.toggle('_active')
+            getCalendar.nextElementSibling.classList.add('_active')
             // getCalendar.querySelector('.js-calendar').classList.add('_active')
           });
         }) 
@@ -48,10 +49,6 @@ document.addEventListener('DOMContentLoaded', function () {
         let calState = {
           start: null,
           end: null,
-          // elStart: null,
-          // elEnd: null,
-          calStart: null,
-          calEnd: null
         }
 
         elCalendars.forEach(elCalendar => {
@@ -63,8 +60,6 @@ document.addEventListener('DOMContentLoaded', function () {
           input.value = formatDate({ date: curDate })
 
           let selDateDefault = formatDate({ date: curDate, sep: '-', order: 'ymd' }) // to '2023-12-29'
-          // console.log('selDateDefault')
-          // console.log(selDateDefault)
 
           calState.start = curDate.getTime()
           calState.end = curDate.getTime()
@@ -85,9 +80,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 else if (isEndCal) {
                   calState.end = new Date(self.selectedDates[0]).getTime()
                 }
-                // console.log(event.target);
-                // console.log(self);
-                
                 // При выборе второй даты
                 // Если она меньше стартовой
                 if (isEndCal && calState.end < calState.start) {
@@ -97,20 +89,12 @@ document.addEventListener('DOMContentLoaded', function () {
                   // Иначе устанавливаем эту дату
                   let selDateText = formatDate( {date: self.selectedDates[0]} )
                   input.value = selDateText;
-                  self.HTMLOriginalElement.classList.remove('_active');
-
-                  if (isStartCal && calState.start > calState.end) {
-                    // Установить в второй календарь выбор даты первого календаря
-                    // calState.calEnd
-                  }
+                  // self.HTMLOriginalElement.classList.remove('_active');
                 }
               },
             },
           });
           calendar.init()
-
-          if (isStartCal) calState.calStart = calendar
-          else if (isEndCal) calState.calEnd = calendar
         })
 
         // close calendar
@@ -118,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function () {
           let isFormItemBox = e.target.closest('.form__item-box')
           if (!isFormItemBox) {
             elCalendars.forEach(elCalendar => {
-                elCalendar.classList.remove('_active');
+              elCalendar.classList.remove('_active');
             }) 
           }
         });

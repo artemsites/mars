@@ -115,6 +115,10 @@ $marginBox2: 2.368vw;
       margin-right: $marginBox2;
     }
 
+    @media screen and (max-width: $vw-size-6) {
+      width: 0.0625rem;
+    }
+
     &::before,
     &::after {
       content: "";
@@ -130,6 +134,11 @@ $marginBox2: 2.368vw;
 
       top: 0;
       transform: translate(-50%, -50%);
+
+      @media screen and (max-width: $vw-size-6) {
+        width: 0.25rem;
+        height: 0.25rem;
+      }
     }
     &::after {
       width: 0.625rem;
@@ -144,6 +153,11 @@ $marginBox2: 2.368vw;
 
       bottom: 0;
       transform: translate(-50%, 50%);
+
+      @media screen and (max-width: $vw-size-6) {
+        width: 0.35rem;
+        height: 0.35rem;
+      }
     }
   }
   

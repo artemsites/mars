@@ -3,6 +3,6 @@
   Opera 78              
   Google Chrome 93
 
-на safari проверить 
+! на safari проверить 
 
 vue версию сделать 

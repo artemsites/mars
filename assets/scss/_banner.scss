@@ -95,11 +95,12 @@ $marginBox2: 2.368vw;
 
   &__decor-line {
     width: 0.125rem;
-
+    
     display: inline-flex;
     flex-shrink: 0;
     background: #D9D9D9;
-
+    
+    height: 0;
     animation-name: decorFullHeight;
     animation-duration: $animationDuration;
     animation-timing-function: ease-in;
@@ -261,18 +262,17 @@ $marginBox2: 2.368vw;
 
 @keyframes decorFullHeight {
   0% {
-    height: 0rem;
+    height: 0;
   }
   100% {
-    height: 37.28rem;
-    @media screen and (max-width: $vw-size-8) {
-      height: calc((0.7rem + 0.7vw) + ((0.7rem + 2.013vw) * 0.704) + (0.7rem + 2.987vw) + (42.5633187772vw - 0.896069869rem));
-    }
+    height: 594px;
   }
 }
+
 @keyframes decorFullHeightMobile {
   100% {
-    height: calc((0.7rem + 0.7vw) + ((0.7rem + 2.013vw) * 0.704) + (0.7rem + 2.987vw) + (42.5633187772vw - 0.896069869rem));
+    // height: calc((0.7rem + 0.7vw) + ((0.7rem + 2.013vw) * 0.704) + (0.7rem + 2.987vw) + (42.5633187772vw - 0.896069869rem));
+    height: calc((11.2px + 0.7vw) + ((11.2px + 2.013vw) * 0.704) + (11.2px + 2.987vw) + (42.5633187772vw - 14.3371px));
   }
 }
 

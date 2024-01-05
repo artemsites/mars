@@ -101,19 +101,16 @@ $marginBox2: 2.368vw;
     background: #D9D9D9;
     
     height: 0;
-    // height: calc((11.2px + 0.7vw) + ((11.2px + 2.013vw) * 0.704) + (11.2px + 2.987vw) + (42.5633187772vw - 14.3371px));
     animation-name: decorFullHeight;
     animation-duration: $animationDuration;
     animation-timing-function: ease-in;
     animation-fill-mode: forwards;
 
-    margin-right: $marginBox;
-    position: relative;
+    position: absolute;
     z-index: 10;
 
     @media screen and (max-width: $vw-size-8) {
       animation-name: decorFullHeightMobile;
-      margin-right: $marginBox2;
     }
 
     @media screen and (max-width: $vw-size-6) {
@@ -142,8 +139,10 @@ $marginBox2: 2.368vw;
       }
     }
     &::after {
-      width: 0.625rem;
-      height: 0.625rem;
+      width: 10px;
+      height: 10px;
+      // width: 0.625rem;
+      // height: 0.625rem;
 
       opacity: 0;
       animation-name: fadeIn;
@@ -156,8 +155,10 @@ $marginBox2: 2.368vw;
       transform: translate(-50%, 50%);
 
       @media screen and (max-width: $vw-size-6) {
-        width: 0.35rem;
-        height: 0.35rem;
+        width: 5px;
+        height: 5px;
+        // width: 0.35rem;
+        // height: 0.35rem;
       }
     }
   }
@@ -168,8 +169,9 @@ $marginBox2: 2.368vw;
     display: flex;
     flex-direction: column;
 
-    // margin-right: $marginBox;
+    margin-left: $marginBox;
     @media screen and (max-width: $vw-size-8) {
+      margin-left: $marginBox2;
       margin-right: $marginBox2;
     }
   }
@@ -206,9 +208,6 @@ $marginBox2: 2.368vw;
 
   &__title {
     // разница 2,23196881092
-    // width: 70.7rem;
-    // height: 31.676rem;
-
     width: 71.5rem;
     height: 32.1rem;
 

@@ -5,15 +5,15 @@ import legacy from '@vitejs/plugin-legacy'
 export default {
   plugins: [
     splitVendorChunkPlugin(),
-    // legacy({
-    // //   // targets: [
-    // //   //   // 'cover 99.5%',
-    // //   //   'defaults',
-    // //   //   'not dead',
-    // //   //   'iOS 12',
-    // //   //   'safari 12',
-    // //   // ],
-    // }),
+    legacy({
+    //   // targets: [
+    //   //   // 'cover 99.5%',
+    //   //   'defaults',
+    //   //   'not dead',
+    //   //   'iOS 12',
+    //   //   'safari 12',
+    //   // ],
+    }),
   ],
 
   build: {

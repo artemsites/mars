@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let decLine = document.querySelector('.banner__decor-line');
 
-    window.addEventListener("resize",onEventEndThenStartCallback(750, resetAnimation));
+    window.addEventListener("resize",onEventEndThenStartCallback(1000, resetAnimation));
 
     function resetAnimation() {
       decLine.style.animationName = "none";

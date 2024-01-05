@@ -2,7 +2,8 @@
 
   &__box {
     display: flex;
-    gap: 1.25rem;
+    justify-content: space-between;
+    // gap: 1.25rem;
 
     @media screen and (max-width: $vw-size-6-5) {
       max-width: 60vw;
@@ -53,68 +54,133 @@
       padding-bottom: 0.62rem
     }
 
-    &-calendar.vanilla-calendar.vanilla-calendar_default {
-      opacity: 0;
-      pointer-events: none;
-      background-color: $c-base;
-      
-      transition: 500ms;
-  
-      transform: translateY(1rem);
-      position: absolute;
-      top: 100%;
-      z-index: 10;
-  
-      &._active {
-        opacity: 1;
-        pointer-events: initial;
-  
-        transform: translateY(0);
-      }
-  
-      .vanilla-calendar-arrow {
-        pointer-events: unset;
-      }
-      .vanilla-calendar-day__btn {
-        background-color: $c-base;
-      }
-      .vanilla-calendar-day__btn_weekend,
-      .vanilla-calendar-week__day_weekend {
-        color: $c-red;
-        &.vanilla-calendar-day__btn_selected {
-          &:hover {
-            background-color: $c-red;
-          }
-        }
-      }
-      .vanilla-calendar-day__btn_today {
-        font-weight: 900;
-        color: $c-dark;
-      }
-      .vanilla-calendar-day__btn_selected {
-        color: $c-red;
-        font-weight: 900;
-      }
-      .vanilla-calendar-header__content {
-        pointer-events: none;
+
+
+    .datepicker-input.in-edit {
+      border-color: transparent;
+      &:focus, 
+      &:active {
+        box-shadow: none;
       }
     }
+
+    .datepicker-dropdown {
+      padding: 0!important;
+      top: 100%!important;
+    }
+
+    .datepicker-picker {
+      background-color: $c-base;
+      .datepicker-controls {
+        .button{
+          background-color: $c-base;
+        }
+
+        .view-switch {
+          pointer-events: none;
+        }
+
+        .button:hover  {
+          background-color: $c-dark;
+          color: $c-base;
+        }
+      }
+
+      .datepicker-cell {
+        &:not(.disabled):hover {
+          background-color: $c-dark;
+          color: $c-base;
+        }
+        &.selected {
+          background-color: $c-red;
+          color: $c-base;
+        }
+        &.focused:not(.selected) {
+          background-color: $c-base;
+          color: $c-dark;
+        }
+      }
+    }
+
+    // &-calendar.vanilla-calendar.vanilla-calendar_default {
+    //   opacity: 0;
+    //   pointer-events: none;
+    //   background-color: $c-base;
+
+    //   transition: 500ms;
+
+    //   transform: translateY(1rem);
+    //   position: absolute;
+    //   top: 100%;
+    //   z-index: 10;
+
+    //   &._active {
+    //     opacity: 1;
+    //     pointer-events: initial;
+
+    //     transform: translateY(0);
+    //   }
+
+    //   // start ormalize safari 12
+    //   .vanilla-calendar-day,
+    //   .vanilla-calendar-week__day {
+    //     height: auto;
+    //   }
+    //   .vanilla-calendar-days {
+    //     flex-grow: 0;
+    //   }
+    //   // end ormalize safari 12
+
+    //   .vanilla-calendar-arrow {
+    //     pointer-events: unset;
+    //   }
+
+    //   .vanilla-calendar-day__btn {
+    //     background-color: $c-base;
+    //   }
+    //   .vanilla-calendar-day__btn_weekend,
+    //   .vanilla-calendar-week__day_weekend {
+    //     color: $c-red;
+    //     &.vanilla-calendar-day__btn_selected {
+    //       &:hover {
+    //         background-color: $c-red;
+    //       }
+    //     }
+    //   }
+    //   .vanilla-calendar-day__btn_today {
+    //     font-weight: 900;
+    //     color: $c-dark;
+    //   }
+    //   .vanilla-calendar-day__btn_selected {
+    //     color: $c-red;
+    //     font-weight: 900;
+    //   }
+    //   .vanilla-calendar-header__content {
+    //     pointer-events: none;
+    //   }
+    // }
   }
 
   &__item-box {
     flex-grow: 1;
+
+    &:not(:last-child) {
+      margin-right: 1.25rem;
+
+      @media screen and (max-width: $vw-size-6-5) {
+        margin-right: unset;
+        margin-bottom: 1.25rem;
+      }
+    }
   }
 
   &__item-date-wrapper {
     position: relative;
   }
-  
-
-
 
   &__btn {
     width: 100%;
-    
+
     background: $c-dark;
     color: $c-base;
 

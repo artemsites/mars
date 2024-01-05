@@ -9,6 +9,7 @@
   <meta name="description" content="Точка назначения: МАРС...">
 
   <link rel="stylesheet" href="/assets/scss/main.scss">
+  <script type="module" src="/main.js" defer></script>
 </head>
 
 <body>
@@ -53,7 +54,7 @@
               </clipPath>
             </svg>
  
-            <video style="clip-path: url(#mars)" class="banner__title-video" preload="auto" muted autoplay controls="true" playsinline loop>
+            <video style="clip-path: url(#mars)" class="banner__title-video" preload="auto" muted autoplay loop>
               <source 
                 src="/assets/videos/mars.m4v" 
                 type="video/x-m4v" />
@@ -95,7 +96,7 @@
               <div class="form__item-date-wrapper">
                 <label class="form__item js-get-calendar">
                   <span class="form__item-title">Дата заезда</span>
-                  <input class="form__item-input js-from-date-from" type="text" value="">
+                  <input class="form__item-input js-date-from" type="text" value="">
                 </label>
                 <div class="form__item-calendar js-calendar" data-calendar="start"></div>
               </div>
@@ -105,7 +106,7 @@
               <div class="form__item-date-wrapper">
                 <label class="form__item js-get-calendar">
                   <span class="form__item-title">Дата выезда</span>
-                  <input class="form__item-input js-from-date-to" type="text" value="">
+                  <input class="form__item-input js-date-to" type="text" value="">
                 </label>
                 <div class="form__item-calendar js-calendar" data-calendar="end"></div>
               </div>
@@ -127,9 +128,6 @@
     </div>
   </div>
 
-
-
-  <script type="module" src="/main.js"></script>
 </body>
 
 </html>

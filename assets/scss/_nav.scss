@@ -1,14 +1,8 @@
 .nav {
   display: inline-flex;
 
-  gap: 1.9rem;
-
   margin-left: auto;
 
-  @media screen and (max-width: $vw-size-7) {
-    gap: 1rem;
-  }
-  
   &__item {
     color: $c-base;
     text-transform: uppercase;
@@ -17,6 +11,17 @@
 
     @media screen and (max-width: $vw-size-7) {
       font-size: 0.9rem;
+    }
+
+    &:not(:last-child) {
+      margin-right: 1.9rem;
+      @media screen and (max-width: $vw-size-7) {
+        margin-right: 1rem;
+      }
+      @media screen and (max-width: $vw-size-5) {
+        margin-right: unset;
+        margin-bottom: 1rem;
+      }
     }
 
     &:hover {

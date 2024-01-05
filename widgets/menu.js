@@ -14,6 +14,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   } catch (err) {
-    console.error('TRY-CATCH ERROR: ', err)
+    console.error('menu.js ', err)
   } finally {}
 })

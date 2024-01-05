@@ -16,7 +16,6 @@
   "dependencies": {
     "@vitejs/plugin-legacy": "^5.2.0",
     "autoprefixer": "^10.4.16",
-    "sass": "^1.69.5",
-    "vanilla-calendar-pro": "^2.9.2"
+    "sass": "^1.69.5"
   }
 }

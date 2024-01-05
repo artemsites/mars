@@ -2,13 +2,6 @@ import Datepicker from 'vanillajs-datepicker/Datepicker';
 import ru from 'vanillajs-datepicker/locales/ru';
 import 'vanillajs-datepicker/css/datepicker.css';
 
-
-
-// import VanillaCalendar from "vanilla-calendar-pro";
-// import "vanilla-calendar-pro/build/vanilla-calendar.layout.min.css";
-// import 'vanilla-calendar-pro/build/themes/light.min.css';
-// // import "vanilla-calendar-pro/build/vanilla-calendar.min.css";
-
 import { formatDate } from "../helpers/formatDate";
 import { listenerWheel } from "../helpers/listenerWheel";
 import { getDeclOfNum } from "../helpers/getDeclOfNum";
@@ -28,7 +21,6 @@ document.addEventListener("DOMContentLoaded", function () {
     let dateFrom = form.querySelector(".js-date-from");
     let dateTo = form.querySelector(".js-date-to");
     let formPeopleCount = form.querySelector(".js-form-people-count");
-    let getCalendars = form.querySelectorAll(".js-get-calendar");
 
     let peopleCount = Number(formPeopleCount.value.split(" ")[0]);
 
@@ -48,90 +40,8 @@ document.addEventListener("DOMContentLoaded", function () {
           language: 'ru',
         }
 
-        // const elem = document.querySelector('#datepicker');
-        const datepicker1 = new Datepicker(dateFrom, calOpt); 
-        const datepicker2 = new Datepicker(dateTo, calOpt); 
-
-
-
-        // // get-calendar
-        // getCalendars.forEach((getCalendar) => {
-        //   getCalendar.addEventListener("click", function (e) {
-        //     getCalendar.nextElementSibling.classList.add("_active");
-        //     // getCalendar.querySelector('.js-calendar').classList.add('_active')
-        //   });
-        // });
-
-        // // calendar
-        // let elCalendars = form.querySelectorAll(".js-calendar");
-        // let calState = {
-        //   start: null,
-        //   end: null,
-        // };
-
-        // elCalendars.forEach(function (elCalendar) {
-        //   const isStartCal = elCalendar.dataset.calendar === "start";
-        //   const isEndCal = elCalendar.dataset.calendar === "end";
-
-        //   let input = elCalendar
-        //     .closest(".form__item-box")
-        //     .querySelector(".form__item-input");
-        //   let curDate = new Date();
-        //   input.value = formatDate({ date: curDate });
-
-        //   let selDateDefault = formatDate({
-        //     date: curDate,
-        //     sep: "-",
-        //     order: "ymd",
-        //   }); // to '2023-12-29'
-
-        //   calState.start = curDate.getTime();
-        //   calState.end = curDate.getTime();
-
-        //   let calendar = new VanillaCalendar(elCalendar, {
-        //     settings: {
-        //       visibility: {
-        //         theme: 'light',
-        //       },
-
-        //       lang: "ru-RU",
-
-        //       selected: {
-        //         dates: [selDateDefault],
-        //       },
-        //     },
-        //     actions: {
-        //       clickDay(event, self) {
-        //         if (isStartCal) {
-        //           calState.start = new Date(self.selectedDates[0]).getTime();
-        //         } else if (isEndCal) {
-        //           calState.end = new Date(self.selectedDates[0]).getTime();
-        //         }
-        //         // При выборе второй даты
-        //         // Если она меньше стартовой
-        //         if (isEndCal && calState.end < calState.start) {
-        //           // То ничего не делаем
-        //         } else {
-        //           // Иначе устанавливаем эту дату
-        //           let selDateText = formatDate({ date: self.selectedDates[0] });
-        //           input.value = selDateText;
-        //           // self.HTMLOriginalElement.classList.remove('_active');
-        //         }
-        //       },
-        //     },
-        //   });
-        //   calendar.init();
-        // });
-
-        // // close calendar
-        // popup.addEventListener("click", function (e) {
-        //   let isFormItemBox = e.target.closest(".form__item-box");
-        //   if (!isFormItemBox) {
-        //     elCalendars.forEach((elCalendar) => {
-        //       elCalendar.classList.remove("_active");
-        //     });
-        //   }
-        // });
+        new Datepicker(dateFrom, calOpt); 
+        new Datepicker(dateTo, calOpt); 
 
         firstOpenPopup = false;
       }

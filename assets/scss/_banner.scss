@@ -212,13 +212,13 @@ $marginBox2: 2.368vw;
     height: 32.1rem;
 
     display: flex;
-    mask-image: url(/assets/images/mars.svg);
+    mask-image: url("/assets/images/mars.svg");
     mask-repeat: no-repeat;
     object-fit: cover;
     object-position: center center;
 
     opacity: 0;
-    animation-name: fromDark;
+    animation-name: fadeIn;
     animation-duration: $animationDuration;
     animation-delay: calc($animationDuration * 1.2);
     animation-timing-function: ease-in;
@@ -263,12 +263,6 @@ $marginBox2: 2.368vw;
     opacity: 0;
   }
 
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes fromDark {
   100% {
     opacity: 1;
   }

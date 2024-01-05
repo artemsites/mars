@@ -43,7 +43,6 @@
     }
 
     &-input {
-      // background-color: $c-base;
       color: $c-dark;
       font-family: "Montserrat", sans-serif;
       font-size: 1rem;
@@ -51,7 +50,9 @@
       font-weight: 400;
       letter-spacing: -0.01rem;
       line-height: normal;
-      padding-bottom: 0.62rem
+      padding-bottom: 0.5rem;
+
+      transform: translateX(-0.1rem);
     }
 
 

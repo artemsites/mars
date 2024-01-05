@@ -31,8 +31,10 @@ document.addEventListener("DOMContentLoaded", function () {
       if (firstOpenPopup) {
 
         let curDate = new Date();
-        dateFrom.value = formatDate({ date: curDate });
-        dateTo.value = formatDate({ date: curDate });
+        dateFrom.value = '13.05.2022';
+        dateTo.value = '13.05.2022';
+        // dateFrom.value = formatDate({ date: curDate });
+        // dateTo.value = formatDate({ date: curDate });
         
         Object.assign(Datepicker.locales, ru);
         let calOpt = {

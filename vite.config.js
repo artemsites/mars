@@ -23,7 +23,7 @@ export default {
         entryFileNames: `assets/[name].js`, 
         chunkFileNames: `assets/[name].js`, 
         // 8.2 Чтобы удалить хэш из имени файла нужно убрать ".[hash]" 
-        assetFileNames: `assets/[name].[ext]` 
+        assetFileNames: `assets/[name].[hash].[ext]` 
       }, 
     },
   },

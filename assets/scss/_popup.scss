@@ -75,6 +75,7 @@ $transitionBackground: 500ms;
 
     transition: opacity var(--msChange);
 
+    transform: translateX(0.1rem);
     @media screen and (max-width: $vw-size-7-5) {
       font-size: 11.4vw;
     }

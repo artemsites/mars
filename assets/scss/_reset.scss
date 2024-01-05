@@ -18,6 +18,7 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
+  box-sizing: border-box;
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
@@ -58,11 +59,10 @@ table {
  * @version 1.2 05.01.2024
  * @source https://gist.github.com/artemsites/e8b6727865d1880800990fff956a0c47
  */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+// *,
+// *::before,
+// *::after {
+// }
 
 h1,
 h2,

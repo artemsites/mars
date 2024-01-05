@@ -100,7 +100,6 @@ $marginBox2: 2.368vw;
     flex-shrink: 0;
     background: #D9D9D9;
 
-    height: 0rem;
     animation-name: decorFullHeight;
     animation-duration: $animationDuration;
     animation-timing-function: ease-in;
@@ -210,6 +209,8 @@ $marginBox2: 2.368vw;
 
     width: 71.5rem;
     height: 32.1rem;
+
+    position: relative;
     @media screen and (max-width: $vw-size-8) {
       width: calc(95vw - 2rem);
       //94.7vw/2,23196881092
@@ -226,9 +227,12 @@ $marginBox2: 2.368vw;
     animation-fill-mode: forwards;
 
 
-    &-self {
-      width: 0;
-      height: 0;
+    &-mask {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
     }
 
     &-video {
@@ -251,7 +255,11 @@ $marginBox2: 2.368vw;
 }
 
 
+
 @keyframes decorFullHeight {
+  0% {
+    height: 0rem;
+  }
   100% {
     height: 37.28rem;
     @media screen and (max-width: $vw-size-8) {

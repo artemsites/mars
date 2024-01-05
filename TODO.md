@@ -6,3 +6,9 @@
 ! на safari проверить 
 
 vue версию сделать 
+
+
+
+вынести 
+  reset.css
+  mask-image (safari)

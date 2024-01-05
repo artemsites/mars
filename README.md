@@ -6,6 +6,5 @@
 
 Отправка формы идёт на мой эмейл через PHPMailer
 
-Я ещё буду её до ума доводить, но пока показываю на чём остановился, в общих чертах готово.
 https://test.artemsites.ru/   
 https://github.com/artemsites/mars  

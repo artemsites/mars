@@ -84,7 +84,6 @@
       display: inline-flex;
       flex-direction: column;
 
-      gap: 0.4rem;
       padding: 0.6rem 0 0.6rem 0.6rem;
       border-radius: 0.6rem;
       background-color: transparent;
@@ -100,6 +99,10 @@
         
         background-color: $c-base;
         transition: transform .5s, opacity .25s;
+
+        &:not(:last-child) {
+          margin-bottom: 0.4rem;
+        }
       }
 
       &._opened span {

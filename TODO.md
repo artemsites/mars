@@ -10,6 +10,7 @@ vue версию сделать
 
 
 вынести 
+  btn burger
   reset.css
   mask-image (safari)
 

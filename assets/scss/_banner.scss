@@ -265,13 +265,19 @@ $marginBox2: 2.368vw;
     height: 0;
   }
   100% {
+    // height: 37.28rem;
+    // for safari 12: rem плохо считает
     height: 594px;
   }
 }
 
 @keyframes decorFullHeightMobile {
+  0% {
+    height: 0;
+  }
   100% {
     // height: calc((0.7rem + 0.7vw) + ((0.7rem + 2.013vw) * 0.704) + (0.7rem + 2.987vw) + (42.5633187772vw - 0.896069869rem));
+    // for safari 12: rem плохо считает
     height: calc((11.2px + 0.7vw) + ((11.2px + 2.013vw) * 0.704) + (11.2px + 2.987vw) + (42.5633187772vw - 14.3371px));
   }
 }

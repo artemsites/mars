@@ -1,15 +1,13 @@
-V Mozilla Firefox 91    https://ftp.mozilla.org/pub/firefox/releases/
-V Opera 78              https://ftp.opera.com/ftp/pub/opera/desktop/
+V Mozilla Firefox 91    https://ftp.mozilla.org/pub/firefox/releases/      https://archive.archlinux.org/packages/f/firefox/
+V Opera 78              https://ftp.opera.com/ftp/pub/opera/desktop/       https://archive.archlinux.org/packages/o/opera/
 V Google Chrome 93
-
-
+V Safari 12   
+V IOS Safari 12
 
 Microsoft Edge 92       https://en.softonic.com/download/microsoft-edge/windows/post-download/v/96.0.1054.53
-Safari 12               https://github.com/sickcodes/Docker-OSX     https://github.com/kholia/OSX-KVM    https://www.linux.org.ru/articles/desktop/17166844   
-                          https://computingforgeeks.com/how-to-run-macos-on-kvm-qemu/    https://github.com/foxlet/macOS-Simple-KVM
+            
 
 
-
-IOS Safari 12
 MI browser 13
 Samsung Internet Browser 14
+

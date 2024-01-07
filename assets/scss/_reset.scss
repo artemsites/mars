@@ -54,10 +54,9 @@ table {
 
 
 /**
- * @title art-reset (normalize)
+ * @title art-normalize
  * @author artemsites.ru
- * @version 1.2 05.01.2024
- * @source https://gist.github.com/artemsites/e8b6727865d1880800990fff956a0c47
+ * @version 1.3 07.01.2024
  */
 h1,
 h2,
@@ -92,6 +91,9 @@ input {
   background-color: transparent;
   border: none;
   outline: none;
+  &::placeholder {
+    opacity: 1;
+  }
 }
 
 a {

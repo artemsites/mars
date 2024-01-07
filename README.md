@@ -15,4 +15,11 @@ https://github.com/artemsites/mars/tree/vue
 
 
 
+Вот эти браузеры не смог найти к сожалению (денег нет на browserstack или lambda)
+  Microsoft Edge 92       
+  MI browser 13
+  Samsung Internet Browser 14
+
+
+
 Отправка формы идёт на мой эмейл через PHPMailer

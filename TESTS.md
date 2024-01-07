@@ -4,6 +4,6 @@ V Google Chrome 93
 V Safari 12   
 V IOS Safari 12
 
-Microsoft Edge 92       
-MI browser 13
-Samsung Internet Browser 14
+Microsoft Edge 92         
+MI browser 13    
+Samsung Internet Browser 14      

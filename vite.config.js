@@ -3,6 +3,8 @@ import { splitVendorChunkPlugin } from 'vite'
 import legacy from '@vitejs/plugin-legacy'
 
 export default {
+  base: "./",
+  
   plugins: [
     splitVendorChunkPlugin(),
     legacy({

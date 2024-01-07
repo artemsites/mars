@@ -4,10 +4,6 @@ V Google Chrome 93
 V Safari 12   
 V IOS Safari 12
 
-Microsoft Edge 92       https://en.softonic.com/download/microsoft-edge/windows/post-download/v/96.0.1054.53
-            
-
-
+Microsoft Edge 92       
 MI browser 13
 Samsung Internet Browser 14
-

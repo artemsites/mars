@@ -1,3 +1,12 @@
+/**
+ * @author Artem Kuznecov - artemsites.ru
+ * @version 1.0 - 03.01.2024
+ * 
+ * @source https://gist.github.com/artemsites/204dfa300c0607fcc6422c3e466dc8ca
+ * @param {*} el 
+ * @param {*} callback 
+ * listenerWheel(elem, functionCallback);
+ */
 export function listenerWheel(el, callback) { 
   if (el.addEventListener) {
     if ('onwheel' in document) {

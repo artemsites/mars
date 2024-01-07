@@ -31,6 +31,6 @@ export function listenerWheel(el, callback) {
   
     callback(delta)
   
-    e.preventDefault ? e.preventDefault() : (e.returnValue = false);
+    // e.preventDefault ? e.preventDefault() : (e.returnValue = false);
   }
 }

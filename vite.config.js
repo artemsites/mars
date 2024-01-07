@@ -4,7 +4,7 @@ import legacy from '@vitejs/plugin-legacy'
 
 export default {
   base: "./",
-  
+
   plugins: [
     splitVendorChunkPlugin(),
     legacy({
@@ -17,6 +17,20 @@ export default {
     //   // ],
     }),
   ],
+
+  resolve: {
+    alias: {
+      'vue': 'vue/dist/vue.esm-browser.prod.js', // для браузера, без компиляции шаблонов
+      // 'vue': 'vue/dist/vue.esm-browser.prod.js', // для браузера, без компиляции шаблонов
+    },
+  },
+
+  define: {
+  	// https://github.com/vuejs/core/tree/main/packages/vue#bundler-build-feature-flags
+    __VUE_OPTIONS_API__: true,
+    __VUE_PROD_DEVTOOLS__: true,
+    __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: true,
+  },
 
   build: {
     rollupOptions: {

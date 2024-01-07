@@ -113,7 +113,7 @@ $transitionBackground: 500ms;
     }
   }
 
-  &._active {
+  &._opened {
     pointer-events: initial!important;
 
     > * {
@@ -121,7 +121,7 @@ $transitionBackground: 500ms;
     }
   }
 
-  &._active & {
+  &._opened & {
     &__wrapper {
       transition: opacity 300ms linear $transitionBackground;
       opacity: 1;

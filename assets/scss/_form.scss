@@ -53,6 +53,9 @@
       padding-bottom: 0.5rem;
 
       transform: translateX(-0.1rem);
+      &::placeholder {
+        color: $c-dark;
+      }
     }
 
 
@@ -64,6 +67,7 @@
         box-shadow: none;
       }
     }
+
 
     .datepicker-dropdown {
       padding: 0!important;
@@ -88,13 +92,32 @@
       }
 
       .datepicker-cell {
-        &:not(.disabled):hover {
-          background-color: $c-dark;
+        &:not(.disabled):hover,
+        &.range-start:not(.selected),
+        &.range-end:not(.selected) {
+          background-color: $c-red;
           color: $c-base;
         }
+        &.range {
+          background-color: $c-dark;
+          color: $c-base;
+
+          &:not(.disabled):not(.focused):not(.today):hover {
+            background-color: $c-red;
+            color: $c-base;
+          }
+        }
+        // &:not(.disabled):hover {
+        //   background-color: $c-dark;
+        //   color: $c-base;
+        // }
         &.selected {
           background-color: $c-red;
           color: $c-base;
+          &:hover {
+            background-color: $c-red;
+            color: $c-base;
+          }
         }
         &.focused:not(.selected) {
           background-color: $c-base;

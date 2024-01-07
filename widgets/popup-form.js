@@ -1,4 +1,4 @@
-import Datepicker from 'vanillajs-datepicker/Datepicker';
+import { DateRangePicker, Datepicker } from 'vanillajs-datepicker';
 import ru from 'vanillajs-datepicker/locales/ru';
 import 'vanillajs-datepicker/css/datepicker.css';
 
@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let dateFrom = form.querySelector(".js-date-from");
     let dateTo = form.querySelector(".js-date-to");
     let formPeopleCount = form.querySelector(".js-form-people-count");
+    let elDatepicker = form.querySelector("#datepicker");
 
     let peopleCount = Number(formPeopleCount.value.split(" ")[0]);
 
@@ -33,18 +34,20 @@ document.addEventListener("DOMContentLoaded", function () {
         let curDate = new Date();
         // dateFrom.value = '13.05.2022';
         // dateTo.value = '13.05.2022';
-        dateFrom.value = formatDate({ date: curDate });
-        dateTo.value = formatDate({ date: curDate });
+        dateFrom.placeholder = formatDate({ date: curDate });
+        dateTo.placeholder = formatDate({ date: curDate });
         
         Object.assign(Datepicker.locales, ru);
+
         let calOpt = {
           format: 'dd.mm.yyyy',
           language: 'ru',
           autohide: true,
         }
 
-        new Datepicker(dateFrom, calOpt); 
-        new Datepicker(dateTo, calOpt); 
+        new DateRangePicker(elDatepicker, calOpt); 
+        // new Datepicker(dateFrom, calOpt); 
+        // new Datepicker(dateTo, calOpt); 
 
         firstOpenPopup = false;
       }
@@ -97,6 +100,13 @@ document.addEventListener("DOMContentLoaded", function () {
       e.preventDefault();
 
       let formData = new FormData();
+
+      if (dateFrom.value==='') {
+        dateFrom.value = dateFrom.placeholder
+      }
+      if (dateTo.value==='') {
+        dateTo.value = dateTo.placeholder
+      }
 
       formData.append("dateFrom", dateFrom.value);
       formData.append("dateTo", dateTo.value);

@@ -77,14 +77,14 @@
         </div>
   
         <form class="form popup__form js-form">
-          <div class="form__box">
+          <div class="form__box" id="datepicker">
             <div class="form__item-box">
               <div class="form__item-date-wrapper">
                 <label class="form__item">
                   <span class="form__item-title">Дата заезда</span>
-                  <input class="form__item-input js-date-from" type="text" value="">
+                  <input class="form__item-input js-date-from" type="text" value="" name="start" autocomplete="off">
                 </label>
-                <div class="form__item-calendar js-calendar" data-calendar="start"></div>
+                <div class="form__item-calendar"></div>
               </div>
             </div>
   
@@ -92,9 +92,9 @@
               <div class="form__item-date-wrapper">
                 <label class="form__item">
                   <span class="form__item-title">Дата выезда</span>
-                  <input class="form__item-input js-date-to" type="text" value="">
+                  <input class="form__item-input js-date-to" type="text" value="" name="end" autocomplete="off">
                 </label>
-                <div class="form__item-calendar js-calendar" data-calendar="end"></div>
+                <div class="form__item-calendar"></div>
               </div>
             </div>
   

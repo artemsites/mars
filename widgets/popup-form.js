@@ -40,6 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let calOpt = {
           format: 'dd.mm.yyyy',
           language: 'ru',
+          autohide: true,
         }
 
         new Datepicker(dateFrom, calOpt); 

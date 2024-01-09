@@ -10,8 +10,6 @@ try {
 
   window.addEventListener("resize", onEventEndThenStartCallback(250, initSpaceMouseAnimation));
 
-  getEventListeners(document);
-
     function initSpaceMouseAnimation() {
       document.removeEventListener("mousemove", animationLogicClasses, false);
       document.addEventListener("mousemove", animationLogicClasses);

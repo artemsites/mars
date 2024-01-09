@@ -9,10 +9,7 @@
  * @param {Function} callbackByEventStart - callback при старте события | callback at the start of the event
  * @param {Object} objParamsCallbackStart - объект аргумент для функции callbackByEventStart | object argument for the callbackByEventStart function
  *
- * @example:
- *   window.addEventListener("resize", () => {
- *       onEventEndThenStartCallback(250, showBtnMoreAndInitLogic, null, hideBtnMoreAndResetLogic, null);
- *   });
+ * @example: window.addEventListener("resize", onEventEndThenStartCallback(250, showBtnMoreAndInitLogic, null, hideBtnMoreAndResetLogic, null));
  */
 export function onEventEndThenStartCallback(
   ms,

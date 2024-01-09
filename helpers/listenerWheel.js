@@ -1,6 +1,6 @@
 /**
  * @author Artem Kuznecov - artemsites.ru
- * @version 1.0 - 03.01.2024
+ * @version 1.1 - 09.01.2024
  * 
  * @source https://gist.github.com/artemsites/204dfa300c0607fcc6422c3e466dc8ca
  * @param {*} el 
@@ -31,6 +31,7 @@ export function listenerWheel(el, callback) {
   
     callback(delta)
   
-    e.preventDefault ? e.preventDefault() : (e.returnValue = false);
+    // В консоль кидает ошибки
+    // e.preventDefault ? e.preventDefault() : (e.returnValue = false);
   }
 }

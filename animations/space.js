@@ -15,14 +15,13 @@ try {
       document.addEventListener("mousemove", animationLogicClasses);
     }
     
+    let fromRight = false;
     function animationLogicClasses(e) {
       // Изменения позиции космоса от мыши
       let viewportWidth =
       document.body.clientWidth ||
       window.innerWidth ||
       document.documentElement.clientWidth;
-
-      let fromRight = false;
 
       // center -> left
       if (e.x >= 0 && e.x < viewportWidth / 3) {
